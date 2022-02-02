@@ -48,16 +48,16 @@ const Footer = () => {
                             <Col md={2}>
                                 <ul className="list-unstyled footer-link">
                                     <li>
-                                        <NavLink to="/home">Home</NavLink>
+                                        <NavLink to="home">Home</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/about">About us</NavLink>
+                                        <NavLink to="about">About us</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/contact">Contact us</NavLink>
+                                        <NavLink to="contact">Contact us</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/policy">Policy</NavLink>
+                                        <NavLink to="places">Places</NavLink>
                                     </li>
                                 </ul>
                             </Col>
