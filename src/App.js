@@ -3,11 +3,12 @@ import './App.css';
 import About from './components/About/About';
 import AddPlace from './components/AddPlace/AddPlace';
 import Contact from './components/Contact/Contact';
-import Home from './components/Home/Home';
+import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import MyOrders from './components/MyOrders/MyOrders';
 import Places from './components/Places/Places';
+import Footer from './components/shared/Footer/Footer';
 import Header from './components/shared/Header/Header';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="addplace" element={<AddPlace/>} />
         <Route path="manageorders" element={<ManageOrders/>} />
      </Routes>
+     <Footer/>
     </div>
   );
 }
