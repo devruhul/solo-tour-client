@@ -3,9 +3,23 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 
 const AddPlace = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
+        fetch('http://localhost:5000/places', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Succesfully added places')
+                    reset()
+                }
+            })
         console.log(data)
     };
     return (
@@ -30,3 +44,16 @@ const AddPlace = () => {
 };
 
 export default AddPlace;
+
+/*  
+https://ibb.co/zxM0RfQ.png
+https://ibb.co/Tc0qkW7.png
+https://ibb.co/Dt0TzQx.png
+https://ibb.co/XVB9Skk.jpg
+https://ibb.co/DL48k3L.jpg
+https://ibb.co/w6FJrFw.jpg
+https://ibb.co/5crxpMs.jpg
+https://ibb.co/DwHWVXH.jpg
+https://ibb.co/mhYCph10.jpg
+
+*/
