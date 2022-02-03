@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import {Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import { useForm } from "react-hook-form";
 
 const Booking = () => {
@@ -9,22 +9,22 @@ const Booking = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data, e) => {
         e.preventDefault()
-        fetch('http://localhost:5000/places/orders', {
+        fetch('http://localhost:5000/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId) {
-                alert('Succesfully placed')
-                reset()
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Succesfully placed')
+                    reset()
+                }
+            })
         console.log(data)
-       
+
     };
 
     useEffect(() => {
