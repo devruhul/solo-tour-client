@@ -44,16 +44,3 @@ const AddPlace = () => {
 };
 
 export default AddPlace;
-
-/*  
-https://ibb.co/zxM0RfQ.png
-https://ibb.co/Tc0qkW7.png
-https://ibb.co/Dt0TzQx.png
-https://ibb.co/XVB9Skk.jpg
-https://ibb.co/DL48k3L.jpg
-https://ibb.co/w6FJrFw.jpg
-https://ibb.co/5crxpMs.jpg
-https://ibb.co/DwHWVXH.jpg
-https://ibb.co/mhYCph10.jpg
-
-*/

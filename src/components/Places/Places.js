@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Place from '../Place/Place';
+import './Places.css'
 
 const Places = () => {
+    const [places, setPlaces] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/places')
+            .then(res => res.json())
+            .then(data => setPlaces(data))
+    }, [])
     return (
-        <div className='m-5'>
-            <h2>This is places</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta repellendus fuga atque at mollitia nam velit necessitatibus iure ad? Ratione, sequi deserunt ea recusandae aliquid at maiores, exercitationem voluptas esse tempora, earum mollitia laboriosam id eveniet ipsa. Est delectus quaerat deserunt ab ipsam cumque officiis. Quo at odio necessitatibus placeat cum. Maxime repudiandae nisi natus. Expedita earum perferendis fuga eveniet, deserunt alias quibusdam a velit provident praesentium iusto iste exercitationem et sint laborum quidem voluptates! Sit voluptatem accusantium sunt, dolores illum quis, molestiae laborum aperiam consequatur totam ab! Libero ea eaque dolor doloremque ab nobis voluptatem blanditiis suscipit ipsam numquam.</p>
+        <div>
+            <h2 className='m-5'>All Places</h2>
+            <div className='places-container container' >
+                {
+                    places.map(place => <Place
+                        key={place._id}
+                        place={place}
+                    ></Place>)
+                }
+            </div>
+           
         </div>
     );
 };

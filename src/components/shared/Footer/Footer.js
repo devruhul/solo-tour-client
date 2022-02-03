@@ -31,7 +31,7 @@ const Footer = () => {
                                     <li>
                                         <FontAwesomeIcon icon={faEnvelope} />
 
-                                        <a className='text-white text-decoration-none' href="mailto:ruhulamin262001@gmail.com">
+                                        <a className='text-white text-decoration-none' href="mailto:ruhulamin262001@gmail.com" rel="noreferrer" target="_blank">
                                             <span className="ms-1 fs-5">  ruhulamin262001@gmail.com
                                             </span>
                                         </a>
