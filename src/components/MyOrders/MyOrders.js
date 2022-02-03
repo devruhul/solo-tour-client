@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Spinner } from 'react-bootstrap';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
@@ -24,7 +24,6 @@ const MyOrders = () => {
                         const remaining = orders.filter(pd => pd._id !== id);
                         setOrders(remaining);
                     }
-                    console.log(data);
                 })
         }
 
@@ -33,27 +32,30 @@ const MyOrders = () => {
     return (
         <div>
             <h2>This is my orders {orders.length}</h2>
-             <Table responsive striped bordered hover size="sm">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                {orders?.map((order, index) => (
-                        <tbody>
+            {
+                orders.length === 0 ? <Spinner animation="border" variant="info" />
+                    : <Table responsive striped bordered hover size="sm">
+                        <thead>
                             <tr>
-                                <td>{index + 1}</td>
-                                <td>{order?.name}</td>
-                                <td>{order?.email}</td>
-                                <button onClick={() => handleDelete(order._id)} className="btn bg-danger text-white p-2">Delete</button>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
                             </tr>
-                        </tbody>
-                    ))}
-            </Table>
-            
+                        </thead>
+                        {orders?.map((order, index) => (
+                            <tbody>
+                                <tr>
+                                    <td>{index + 1}</td>
+                                    <td>{order?.name}</td>
+                                    <td>{order?.email}</td>
+                                    <button onClick={() => handleDelete(order._id)} className="btn bg-danger text-white p-2">Delete</button>
+                                </tr>
+                            </tbody>
+                        ))}
+                    </Table>
+            }
+
         </div>
     );
 };
