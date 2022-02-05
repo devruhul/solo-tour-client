@@ -1,13 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import {
-    faEnvelope,
-    faMapMarkerAlt,
-    faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
+import { faEnvelope, faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import footerLogo from "../../../images/logo.png"
 import FooterImg from "../../../images/footerbg.jpg"
 import './Footer.css'
 
@@ -20,7 +15,7 @@ const Footer = () => {
                         <Row>
                             <Col md={6}>
                                 <div className="text-center my-2">
-                                    <img width="120px" src={footerLogo} alt="" />
+                                    <Link to="/"> <h2>SOLO TOUR</h2></Link>
                                 </div>
 
                                 <ul className="list-unstyled">
