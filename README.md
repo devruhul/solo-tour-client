@@ -13,11 +13,11 @@ Website Live link [SOLO TOUR](https://solo-tour-devruhul-c125b.web.app/).
 
 ### ` 4. Places route is a private route so you cannot use places route without login`
 
-## You can contact us and it will added database in different colection
+### ` 5. You can contact us and it will added database in different colection`
 
-### You can logout also you can show your order and delete the order
+### ` 6. You can logout also you can show your order and delete the order`
 
-### You can also add a place and it will be database and show places route
+### ` 7. You can also add a place and it will be database and show places route`
 
-### Also you can manage all orders and delete it
+### ` 8. Also you can manage all orders and delete it`
 
