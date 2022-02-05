@@ -16,7 +16,7 @@ const Places = () => {
         <div>
             <h2 className='m-5'>All Places</h2>
             <div className='places-container container' >
-                {/* map all places and generate a single place */}
+                {/* map all places and generate single places */}
                 {
                     places.map(place => <Place
                         key={place._id}
