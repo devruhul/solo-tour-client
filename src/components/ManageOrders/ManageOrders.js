@@ -25,7 +25,6 @@ const ManageOrders = () => {
                         const remaining = orders.filter(pd => pd._id !== id);
                         setOrders(remaining);
                     }
-                    console.log(data);
                 })
         }
 
@@ -45,7 +44,7 @@ const ManageOrders = () => {
                             </tr>
                         </thead>
                         {orders?.map((order, index) => (
-                            <tbody>
+                            <tbody key={order._id}>
                                 <tr>
                                     <td>{index + 1}</td>
                                     <td>{order?.name}</td>
