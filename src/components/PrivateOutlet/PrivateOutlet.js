@@ -13,7 +13,7 @@ const PrivateOutlet = () => {
         return <Spinner animation="border" variant="info" />
     }
 
-    return user?.email ? <Outlet /> :
+    return user.email ? <Outlet /> :
         <Navigate
             to="/login"
             state={{ from: location }}
