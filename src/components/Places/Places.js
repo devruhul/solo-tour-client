@@ -5,15 +5,18 @@ import './Places.css'
 const Places = () => {
     const [places, setPlaces] = useState([])
 
+    // Load all places from the server
     useEffect(() => {
         fetch('http://localhost:5000/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])
+
     return (
         <div>
             <h2 className='m-5'>All Places</h2>
             <div className='places-container container' >
+                {/* map all places and generate a single place */}
                 {
                     places.map(place => <Place
                         key={place._id}
@@ -21,7 +24,6 @@ const Places = () => {
                     ></Place>)
                 }
             </div>
-
         </div>
     );
 };

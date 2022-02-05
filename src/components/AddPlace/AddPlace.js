@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 const AddPlace = () => {
     const { register, handleSubmit, reset } = useForm();
-
+    // add new place to database using fetch throgh post method
     const onSubmit = data => {
         fetch('http://localhost:5000/places', {
             method: "POST",

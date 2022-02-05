@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { faEnvelope, faMapMarkerAlt, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FooterImg from "../../../images/footerbg.jpg"
@@ -14,8 +14,12 @@ const Footer = () => {
                     <Container>
                         <Row>
                             <Col md={6}>
-                                <div className="text-center my-2">
-                                    <Link to="/"> <h2>SOLO TOUR</h2></Link>
+                                <div className="text-center  my-2">
+                                    <ul className="list-unstyled footer-link">
+                                        <li>
+                                            <NavLink className='text-info fs-2' to="/">SOLO TOUR</NavLink>
+                                        </li>
+                                    </ul>
                                 </div>
 
                                 <ul className="list-unstyled">

@@ -4,9 +4,14 @@ import { Row, Col } from 'react-bootstrap'
 import { useForm } from "react-hook-form";
 
 const Booking = () => {
+    // Get the id from the params
     const { id } = useParams()
     const [place, setPlace] = useState([])
+
+    // Get the place details from the server and use useForm hook
     const { register, handleSubmit, reset } = useForm();
+    
+    // Order Placed
     const onSubmit = (data, e) => {
         e.preventDefault()
         fetch('http://localhost:5000/orders', {
@@ -19,14 +24,13 @@ const Booking = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('Succesfully placed')
+                    alert('Succesfully placed order')
                     reset()
                 }
             })
-        console.log(data)
-
     };
 
+    // get single place details from the server
     useEffect(() => {
         fetch(`http://localhost:5000/places/${id}`)
             .then(res => res.json())
@@ -71,7 +75,6 @@ const Booking = () => {
                     </Row>
                 </div>
             </div>
-
         </div>
     );
 };

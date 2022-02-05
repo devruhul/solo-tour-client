@@ -11,10 +11,9 @@ const PrivateOutlet = () => {
     // if user is not loaded yet, show loading message          
     if (isLoading) {
         return <Spinner animation="border" variant="info" />
-
     }
 
-    return user.email ? <Outlet /> :
+    return user?.email ? <Outlet /> :
         <Navigate
             to="/login"
             state={{ from: location }}

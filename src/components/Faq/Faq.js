@@ -3,6 +3,7 @@ import { Accordion } from 'react-bootstrap';
 
 const Faq = () => {
     return (
+        // This is our faq page
         <div>
             <div className="m-5 p-5">
                 <h1 className='text-info fw-bold'>Frequently Asked Questions</h1>

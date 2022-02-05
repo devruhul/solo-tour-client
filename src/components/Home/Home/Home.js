@@ -6,14 +6,13 @@ import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
+        //  Render Home Page All Component 
         <>
             <Banner />
-            <Places/>
+            <Places />
             <About />
             <Faq />
-            
         </>
-
     );
 };
 

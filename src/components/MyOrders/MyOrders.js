@@ -4,12 +4,14 @@ import { Table, Spinner } from 'react-bootstrap';
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
 
+    // get all orders from database
     useEffect(() => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
+    // delete order from database by id
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {

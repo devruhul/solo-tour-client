@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const About = () => {
     return (
+        // About Page for our agency 
         <div>
             <div className="m-5">
                 <Container>

@@ -16,26 +16,30 @@ import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
+
+    // Our App is wrapped with AuthProvider to provide access to the user's authentication state to all of our components.
+
     <div className="App">
       <AuthProvider>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
+          {/* Dynamic id to show place details */}
           <Route path="places/:id" element={<Booking />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<Login />} />
+          {/* Nested Private Route */}
           <Route path="/*" element={<PrivateOutlet />} >
             <Route path="places" element={<Places />} />
           </Route>
+          <Route path="login" element={<Login />} />
           <Route path="myorders" element={<MyOrders />} />
           <Route path="addplace" element={<AddPlace />} />
           <Route path="manageorders" element={<ManageOrders />} />
         </Routes>
         <Footer />
       </AuthProvider>
-
     </div>
   );
 }

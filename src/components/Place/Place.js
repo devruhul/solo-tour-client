@@ -3,10 +3,12 @@ import { CardGroup, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Place = (props) => {
+
+    // descructure props from place
     const { _id, name, description, price, img } = props.place
 
-   
     return (
+        // Single place card with link to details page 
         <div>
             <CardGroup>
                 <Card>
