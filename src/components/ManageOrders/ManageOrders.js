@@ -7,7 +7,7 @@ const ManageOrders = () => {
 
     // get all orders from database
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://solo-tour-server-devruhul.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -16,7 +16,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const result = window.confirm('Are you sure to delete?');
         if (result) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://solo-tour-server-devruhul.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -30,7 +30,7 @@ const ManageOrders = () => {
                 })
         }
     }
-    
+
     return (
         <div>
             <h2>This is manage Orders</h2>

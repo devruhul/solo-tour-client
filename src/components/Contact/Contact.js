@@ -8,7 +8,7 @@ const Contact = () => {
 
     // POST APi to insert contacts
     const onSubmit = data => {
-        fetch('http://localhost:5000/contact', {
+        fetch('https://solo-tour-server-devruhul.herokuapp.com/contact', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

@@ -11,11 +11,13 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+// google log in
     const handleGoogleSignin = () => {
         const googleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleProvider)
-
     }
+
+    // logout user
     const Logout = () => {
         setIsLoading(true)
         signOut(auth)
@@ -23,6 +25,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
+    // observer for user authentication
     useEffect(() => {
         setIsLoading(true)
         const unsubscribe = onAuthStateChanged(auth, user => {

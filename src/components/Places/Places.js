@@ -7,7 +7,7 @@ const Places = () => {
 
     // Load all places from the server
     useEffect(() => {
-        fetch('http://localhost:5000/places')
+        fetch('https://solo-tour-server-devruhul.herokuapp.com/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])

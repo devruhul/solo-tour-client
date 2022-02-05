@@ -14,7 +14,7 @@ const Booking = () => {
     // Order Placed
     const onSubmit = (data, e) => {
         e.preventDefault()
-        fetch('http://localhost:5000/orders', {
+        fetch('https://solo-tour-server-devruhul.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -32,7 +32,7 @@ const Booking = () => {
 
     // get single place details from the server
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${id}`)
+        fetch(`https://solo-tour-server-devruhul.herokuapp.com/places/${id}`)
             .then(res => res.json())
             .then(data => setPlace(data))
 
