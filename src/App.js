@@ -8,6 +8,7 @@ import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import ManageOrders from './components/ManageOrders/ManageOrders';
 import MyOrders from './components/MyOrders/MyOrders';
+import NotFound from './components/NotFound/NotFound';
 import Places from './components/Places/Places';
 import PrivateOutlet from './components/PrivateOutlet/PrivateOutlet';
 import Footer from './components/shared/Footer/Footer';
@@ -25,18 +26,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
-          {/* Dynamic id to show place details */}
-          <Route path="places/:id" element={<Booking />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
           {/* Nested Private Route */}
           <Route path="/*" element={<PrivateOutlet />} >
             <Route path="places" element={<Places />} />
           </Route>
+          {/* Dynamic id to show place details */}
+          <Route path="places/:id" element={<Booking />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="myorders" element={<MyOrders />} />
           <Route path="addplace" element={<AddPlace />} />
           <Route path="manageorders" element={<ManageOrders />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </AuthProvider>

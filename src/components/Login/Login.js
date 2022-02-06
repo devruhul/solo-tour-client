@@ -5,14 +5,15 @@ import useAuth from '../../hooks/useAuth';
 const Login = () => {
     const { user, handleGoogleSignin } = useAuth();
     const location = useLocation()
-    const navigate = useNavigate()
+    let navigate = useNavigate()
     const redirect_uri = location.state?.from || "/home"
 
 
-    const handleGoogleLogin = () => {
+    const handleGoogleLogin = async () => {
         handleGoogleSignin()
             .then(result => {
                 navigate(redirect_uri)
+
             })
     }
     return (
@@ -30,9 +31,6 @@ const Login = () => {
                     </button>
 
             }
-
-
-
         </div>
     );
 };
