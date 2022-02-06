@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Table, Spinner } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth'
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
+    const { user } = useAuth()
 
     // get all orders from database
     useEffect(() => {
-        fetch('https://solo-tour-server-devruhul.herokuapp.com/orders')
+        fetch(`https://solo-tour-server-devruhul.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [user.email])
 
     // delete order from database by id
     const handleDelete = id => {
