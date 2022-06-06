@@ -17,7 +17,7 @@ Website Live link [SOLO TOUR](https://solo-tour-devruhul-c125b.web.app/).
 
 ### ` 6. You can logout also you can show your order and delete the order`
 
-### ` 7. You can also add a place and it will be database and show places route`
+### ` 7. You can also add a place and it will be added database and show it places route`
 
 ### ` 8. Also you can manage all orders and delete it`
 
